@@ -22,6 +22,8 @@ const NetflixSeries = () => {
     const genre = "Action";
     return genre;
   } 
+  let age = 16;
+  // change the value to check the condition is working of age 
   return (
     <div className='container'>
       <div>
@@ -31,7 +33,9 @@ const NetflixSeries = () => {
       <h2>Movie name: {movies}</h2>
       <h3>Rating: {rating}</h3>
       <p>{description}</p>
-      <button>Genre: {returnGenre()}</button>
+      <p>Genre: {returnGenre()}</p>
+      {/* using the ternaery opesartion to check the condition */}
+      <button className='btn'>{age >= 18 ? " Watch now" : "Not avaible"}</button>
     </div>
   );
 };
