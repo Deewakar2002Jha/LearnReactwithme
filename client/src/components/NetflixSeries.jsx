@@ -6,7 +6,7 @@ const NetflixSeries = () => {
   return (
     <ul className='p-5 flex flex-wrap gap-6 justify-center'>
       {seriesdata.map((currElem) => {
-        return < SeriesCard key={currElem.id} currElem={currElem} />
+        return < SeriesCard key={currElem.id} data={currElem} />
       })}
     </ul>
   )

@@ -1,38 +1,46 @@
 import React from 'react'
 
 const SeriesCard = (props) => {
+    const { name
+        , id
+        , img_url
+        , rating
+        , description
+        , cast
+        , genre
+        , watch_url } = props.data
     return (
         <li
             className='bg-red-400 rounded-xl p-4 w-72 shadow-lg'
         >
             <div>
                 <img
-                    src={props.currElem.img_url}
-                    alt={props.currElem.name}
+                    src={img_url}
+                    alt={name}
                     className='w-full h-48 object-cover rounded-lg'
                 />
             </div>
 
             <h2 className='font-bold text-lg mt-2'>
-                {props.currElem.name}
+                {name}
             </h2>
 
-            <h3>⭐ {props.currElem.rating}</h3>
+            <h3>⭐ {rating}</h3>
 
             <p className='text-sm mt-1'>
-                {props.currElem.description}
+                {description}
             </p>
 
             <p className='mt-1'>
-                <strong>Genre:</strong> {props.currElem.genre.join(", ")}
+                <strong>Genre:</strong> {genre.join(", ")}
             </p>
 
             <p className='mt-1'>
-                <strong>Cast:</strong> {props.currElem.cast.join(", ")}
+                <strong>Cast:</strong> {cast.join(", ")}
             </p>
 
             <a
-                href={props.currElem.watch_url}
+                href={watch_url}
                 target="_blank"
                 rel="noopener noreferrer"
             >
