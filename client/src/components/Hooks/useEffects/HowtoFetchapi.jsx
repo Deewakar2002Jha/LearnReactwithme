@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import './HowtoFetchapi.css';
 
 const HowtoFetchapi = () => {
-    const [apiData, setApiData] = useState(null);
+    const [pokemon, setpokemon] = useState(null);
 
     const API = 'https://pokeapi.co/api/v2/pokemon/pikachu';
 
     useEffect(() => {
         fetch(API)
             .then(res => res.json())
-            .then(data => setApiData(data))
+            .then(data => setpokemon(data))
             .catch(err => console.error(err));
     }, []);
 
-    if (!apiData) {
+    if (!pokemon) {
         return <p className="text-center mt-10 text-lg">Loading...</p>;
     }
 
@@ -36,15 +37,15 @@ const HowtoFetchapi = () => {
 
                         <img
                             src={
-                                apiData.sprites.other.dream_world.front_default ||
-                                apiData.sprites.front_default
+                                pokemon.sprites.other.dream_world.front_default ||
+                                pokemon.sprites.front_default
                             }
-                            alt={apiData.name}
+                            alt={pokemon.name}
                             className="w-28 mb-3 transition-transform duration-300 group-hover:scale-110"
                         />
 
                         <h2 className="text-center font-bold text-xl capitalize tracking-wide">
-                            {apiData.name}
+                            {pokemon.name}
                         </h2>
 
                     </figure>
