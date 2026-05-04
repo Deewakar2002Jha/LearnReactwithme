@@ -1,0 +1,97 @@
+/* Page background */
+body {
+  background-color: #c9ccd6;
+  font-family: sans-serif;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  padding: 40px;
+}
+
+/* Header */
+header h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+/* Card list */
+.card-demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.pokemon-card {
+  width: 320px;
+  height: 260px;
+  background: #e5e5e5;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Green oval background */
+.pokemon-card::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -40px;
+  width: 400px;
+  height: 180px;
+  background: #9fbfb0;
+  border-radius: 50%;
+  z-index: 0; /* stays behind */
+  transition: all 0.4s ease;
+}
+
+/* Content (image + text) */
+.pokemon-card figure {
+  position: relative;
+  z-index: 2; /* above background */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pokemon image */
+.pokemon-card img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Pokemon name */
+.pokemon-card h2,
+.pokemon-card h1 {
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #222;
+  margin: 0;
+}
+
+/* Hover effect */
+.pokemon-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animate oval on hover */
+.pokemon-card:hover::before {
+  top: -40px;
+  left: -20px;
+  background: #88b3a0;
+}
+
+/* Image zoom on hover */
+.pokemon-card:hover img {
+  transform: scale(1.1);
+}
