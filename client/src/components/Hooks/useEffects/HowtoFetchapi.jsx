@@ -6,6 +6,20 @@ const HowtoFetchapi = () => {
 
     const API = 'https://pokeapi.co/api/v2/pokemon/pikachu';
 
+    //using ascync await api
+    // const fetchPokemon = async () => {
+    //     try {
+    //         const res = await fetch(API);
+    //         const data = await res.json();
+    //         setPokemon(data);
+    //         setLoading(false);
+    //     } catch (error) {
+    //         console.log(error);
+    //         setError(error);
+    //         setLoading(false);
+    //     }
+    // };
+    // using promoise api
     useEffect(() => {
         fetch(API)
             .then(res => res.json())
@@ -44,9 +58,16 @@ const HowtoFetchapi = () => {
                             className="w-28 mb-3 transition-transform duration-300 group-hover:scale-110"
                         />
 
-                        <h2 className="text-center font-bold text-xl capitalize tracking-wide">
+                        <h2 className="text-center font-bold text-xl capitalize tracking-wide mb-1">
                             {pokemon.name}
                         </h2>
+
+                        {/* Stats in one row (like first image) */}
+                        <div className="grid grid-cols-3 gap-4 mt-2 text-center text-sm text-gray-700">
+                            <p>Height: {pokemon.height}</p>
+                            <p>Weight: {pokemon.weight}</p>
+                            <p>Speed: {pokemon.stats[5].base_stat}</p>
+                        </div>
 
                     </figure>
                 </li>
