@@ -5,6 +5,7 @@
 // import Howtonotfetchdata from './components/Hooks/useEffects/Howtonotfetchdata'
 import HowtoFetchapi from './components/Hooks/useEffects/HowtoFetchapi'
 import Countermemo from './components/Hooks/useMemo/Countermemo'
+import UseMemo from './components/Hooks/useMemo/UseMemo'
 function App() {
   return (
     <>
@@ -13,7 +14,8 @@ function App() {
       {/* <Toggleswitch /> */}
       {/* <Howtonotfetchdata /> */}
       {/* <HowtoFetchapi /> */}
-      <Countermemo />
+      {/* <Countermemo /> */}
+      <UseMemo />
     </>)
 }
 export default App
